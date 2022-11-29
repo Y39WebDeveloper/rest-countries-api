@@ -103,7 +103,7 @@ header {
             color: $dark-mode-txt;
             background-color: $dark-mode-element;
             border-radius: 6px;
-            overflow: hidden;
+            transition: .3s;
             @media (max-width: 767px) {
                 height: 50px;
             }
@@ -119,11 +119,17 @@ header {
                 border-top: 2px solid transparent;
                 border-right: 2px solid transparent;
                 transform: rotate(-45deg) translateY(calc(-50% - 4px));
+                transition: .3s;
+            }
+            &.active::before{
+                top: 22px;
+                transform: rotate(-225deg);
             }
             input {
                 &::placeholder {
                     color: $dark-mode-txt;
                 }
+                color: $dark-mode-txt;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -150,6 +156,9 @@ header {
                         background-color: $dark-mode-bg;
                     }
                 }
+            }
+            &.active .option{
+                display: block;
             }
         }
     }

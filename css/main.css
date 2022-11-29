@@ -133,7 +133,8 @@ header div i {
   color: var(--white);
   background-color: var(--dark-blue);
   border-radius: 6px;
-  overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 @media (max-width: 767px) {
   .content .search .filter {
@@ -153,8 +154,16 @@ header div i {
   border-right: 2px solid transparent;
   -webkit-transform: rotate(-45deg) translateY(calc(-50% - 4px));
           transform: rotate(-45deg) translateY(calc(-50% - 4px));
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.content .search .filter.active::before {
+  top: 22px;
+  -webkit-transform: rotate(-225deg);
+          transform: rotate(-225deg);
 }
 .content .search .filter input {
+  color: var(--white);
   position: absolute;
   top: 0;
   left: 0;
@@ -197,6 +206,9 @@ header div i {
 }
 .content .search .filter .option div:hover {
   background-color: var(--very-dark-blue-bg);
+}
+.content .search .filter.active .option {
+  display: block;
 }
 .content .countries {
   margin-top: 50px;

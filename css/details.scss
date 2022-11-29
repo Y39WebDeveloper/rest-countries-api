@@ -58,3 +58,107 @@ header {
     }
 
 }
+.content{
+    padding: 70px 60px;
+    @media (max-width: 767px) {
+        padding: 40px 30px;
+    }
+    .back{
+        display: flex;
+        margin-bottom: 90px;
+        a{
+        padding: 10px 30px;
+        background-color: $dark-mode-element;
+        color: $dark-mode-txt;
+        border-radius: 6px;
+        font-weight: 600;
+        i{
+            margin-right: 10px;
+        }
+    }
+    }
+    .country{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: 767px){
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .flag{
+            background-color: $dark-mode-element;
+            padding: 20px;
+            border-radius: 12px;
+            transform: translateX(-20px);
+            width: 450px;
+            height: 300px;
+            @media (max-width: 767px) {
+                width: 100%;
+                height: 200px;
+                padding: 0;
+                border-radius: 0;
+                transform: none;
+            }
+            div{
+                width: 100%;
+                height: 100%;
+                background-color: aquamarine;
+            }
+        }
+        .description{
+            max-width: 50%;
+            @media (max-width: 767px){
+                max-width: 100%;
+            }
+            .name{
+                font-weight: 800;
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+            .info{
+                display: flex;
+                gap: 100px;
+                margin-bottom: 50px;
+                @media (max-width: 767px){
+                    flex-direction: column;
+                    gap: 50px;
+                }
+                ul{
+                    li{
+                        &:not(:last-child){
+                            margin-bottom: 7px;
+                        }
+                        span{
+                            font-weight: 800;
+                        }
+                    }
+                }
+            }
+            .border{
+                font-weight: 800;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                @media (max-width: 767px){
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 20px;
+                }
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    @media (max-width: 767px){
+                    }
+                    li{
+                        padding: 5px 20px;
+                        background-color: $dark-mode-element;
+                        border-radius: 6px;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+}
