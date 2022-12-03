@@ -88,9 +88,9 @@ header div i {
   }
 }
 .content .search .search-input {
-  padding: 7px 30px;
+  padding: 7px 0px 7px 30px;
   border-radius: 6px;
-  width: 300px;
+  width: 320px;
   height: 100%;
   background-color: var(--dark-blue);
 }
@@ -214,7 +214,10 @@ header div i {
   margin-top: 50px;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, 280px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 50px;
 }
 @media (max-width: 767px) {
@@ -225,14 +228,13 @@ header div i {
 .content .countries .country {
   display: block;
   background-color: var(--dark-blue);
-  width: 300px;
+  width: 280px;
   border-radius: 6px;
   overflow: hidden;
 }
 .content .countries .country .flag {
   width: 100%;
-  height: 170px;
-  background-color: aquamarine;
+  height: 175px;
 }
 .content .countries .country .info {
   color: var(--white);

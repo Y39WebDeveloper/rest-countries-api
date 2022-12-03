@@ -17,24 +17,24 @@
         <div class="search">
             <div class="search-input">
                 <i class="fa-solid fa-search"></i>
-                <input type="search" name="" id="" placeholder="Search for a country...">
+                <input type="search" name="" id="search" placeholder="Search for a country...">
             </div>
             <div class="filter">
-                <input type="text" class="textBox" placeholder="Filter by Region" readonly>
+                <input id="filter" type="text" class="textBox" placeholder="Filter by Region" readonly data-selected="all">
                 <div class="option">
-                    <div>Africa</div>
-                    <div>America</div>
-                    <div>Asia</div>
-                    <div>Europe</div>
-                    <div>Oceania</div>
+                    <div>All</div>
+                    <div data-continent="Africa">Africa</div>
+                    <div data-continent="Asia">Asia</div>
+                    <div data-continent="Europe">Europe</div>
+                    <div data-continent="North America">North America</div>
+                    <div data-continent="South America">South America</div>
+                    <div data-continent="Oceania">Oceania</div>
                 </div>
             </div>
         </div>
-        <div class="countries">
+        <div id="countries" class="countries">
             <a href="details.html" class="country">
-                <div class="flag">
-
-                </div>
+                <img class="flag" src="" alt="">
                 <div class="info">
                     <h3 class="title">Algeria</h3>
                     <ul>
