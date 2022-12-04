@@ -120,11 +120,6 @@ header div i {
             transform: none;
   }
 }
-.content .country .flag div {
-  width: 100%;
-  height: 100%;
-  background-color: aquamarine;
-}
 .content .country .description {
   max-width: 50%;
 }

@@ -17,6 +17,7 @@ let getData = function(apilink){
 getData("https://restcountries.com/v3.1/all").then((countries) => {
     document.getElementById("search").onkeyup = () => {
         let content = '';
+        let pays = [];
         for (let i = 0; i < countries.length; i++) {
             if (countries[i].name.common.toLowerCase().includes(document.getElementById("search").value.toLowerCase())){
                 if (countries[i].continents == document.querySelector(".textBox").dataset.selected || document.querySelector(".textBox").dataset.selected == "all"){
@@ -30,14 +31,17 @@ getData("https://restcountries.com/v3.1/all").then((countries) => {
                             <li><span>Capital: </span>${countries[i].capital}</li>
                         </ul>
                     </div>
-                </a>`;
+                    </a>`;
+                    pays.push(countries[i]);
                 }
             }
         }
         document.getElementById("countries").innerHTML = content;
+        saveInStorage(pays);
     }
     function showCountries(){
         let content = '';
+        let pays = [];
         for (let i = 0; i < countries.length; i++) {
             if (countries[i].continents == document.querySelector(".textBox").dataset.selected || document.querySelector(".textBox").dataset.selected == "all") {
                 content += `<a href="details.html" class="country">
@@ -50,10 +54,12 @@ getData("https://restcountries.com/v3.1/all").then((countries) => {
                         <li><span>Capital: </span>${countries[i].capital}</li>
                     </ul>
                 </div>
-            </a>`;
+                </a>`;
+                pays.push(countries[i]);
             }
         }
         document.getElementById("countries").innerHTML = content;
+        saveInStorage(pays);
     }
     showCountries();
     /* Filter */
@@ -63,16 +69,24 @@ getData("https://restcountries.com/v3.1/all").then((countries) => {
         filter.classList.toggle('active');
     }
     x.forEach(c => {
-    c.onclick = function() {
-        if(this.dataset.continent){
-            document.querySelector(".textBox").value = this.dataset.continent;
-            document.querySelector(".textBox").dataset.selected = this.dataset.continent;
-        }else{
-            document.querySelector(".textBox").value = "Filter by Region";
-            document.querySelector(".textBox").dataset.selected = "all";
+        c.onclick = function(){
+            if (this.dataset.continent) {
+                document.querySelector(".textBox").value = this.dataset.continent;
+                document.querySelector(".textBox").dataset.selected = this.dataset.continent;
+            } else {
+                document.querySelector(".textBox").value = "Filter by Region";
+                document.querySelector(".textBox").dataset.selected = "all";
+            }
+            showCountries();
         }
-        showCountries();
-    }
+    });
     /* filter */
+    function saveInStorage(pays){
+        let v = document.querySelectorAll(".country");
+        for (let i = 0; i < v.length; i++) {
+            v[i].onclick = function () {
+                localStorage.country = JSON.stringify(pays[i]);
+            }
+        }
+    }
 });
-})
