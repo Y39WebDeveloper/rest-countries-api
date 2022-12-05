@@ -1,11 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 :root {
-  --dark-blue: hsl(209, 23%, 22%);
-  --very-dark-blue-bg: hsl(207, 26%, 17%);
-  --very-dark-blue-txt: hsl(200, 15%, 8%);
-  --dark-grey: hsl(0, 0%, 52%);
-  --very-light-grey: hsl(0, 0%, 98%);
-  --white: hsl(0, 0%, 100%);
+  --element: hsl(209, 23%, 22%);
+  --bg: hsl(207, 26%, 17%);
+  --text: hsl(0, 0%, 100%);
 }
 
 * {
@@ -20,13 +17,13 @@
 body {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
-  background-color: var(--very-dark-blue-bg);
-  color: var(--white);
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 header {
   font-size: 16px;
-  background-color: var(--dark-blue);
+  background-color: var(--element);
   padding: 26px 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -37,6 +34,10 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: 0px 0px 3px -2px black;
+          box-shadow: 0px 0px 3px -2px black;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 @media (max-width: 767px) {
   header {
@@ -45,7 +46,9 @@ header {
   }
 }
 header a {
-  color: var(--white);
+  color: var(--text);
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 header div {
   font-weight: 600;
@@ -92,7 +95,11 @@ header div i {
   border-radius: 6px;
   width: 320px;
   height: 100%;
-  background-color: var(--dark-blue);
+  background-color: var(--element);
+  -webkit-box-shadow: 0px 1px 2px -2px black;
+          box-shadow: 0px 1px 2px -2px black;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 @media (max-width: 767px) {
   .content .search .search-input {
@@ -109,32 +116,45 @@ header div i {
   width: 80%;
   border: none;
   background: none;
-  color: var(--white);
+  color: var(--text);
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 .content .search .search-input input::-webkit-input-placeholder {
-  color: var(--white);
+  color: var(--text);
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 .content .search .search-input input::-moz-placeholder {
-  color: var(--white);
+  color: var(--text);
+  -moz-transition: 0.1s;
+  transition: 0.1s;
 }
 .content .search .search-input input:-ms-input-placeholder {
-  color: var(--white);
+  color: var(--text);
+  -ms-transition: 0.1s;
+  transition: 0.1s;
 }
 .content .search .search-input input::-ms-input-placeholder {
-  color: var(--white);
+  color: var(--text);
+  -ms-transition: 0.1s;
+  transition: 0.1s;
 }
 .content .search .search-input input::placeholder {
-  color: var(--white);
+  color: var(--text);
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 .content .search .filter {
   position: relative;
   width: 200px;
   height: 100%;
-  color: var(--white);
-  background-color: var(--dark-blue);
+  color: var(--text);
+  background-color: var(--element);
   border-radius: 6px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  transition: 0.1s;
 }
 @media (max-width: 767px) {
   .content .search .filter {
@@ -146,7 +166,7 @@ header div i {
   position: absolute;
   width: 5px;
   height: 5px;
-  border: 2px solid var(--white);
+  border: 2px solid var(--text);
   top: 50%;
   right: 20px;
   z-index: 10;
@@ -154,8 +174,8 @@ header div i {
   border-right: 2px solid transparent;
   -webkit-transform: rotate(-45deg) translateY(calc(-50% - 4px));
           transform: rotate(-45deg) translateY(calc(-50% - 4px));
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 .content .search .filter.active::before {
   top: 22px;
@@ -163,7 +183,9 @@ header div i {
           transform: rotate(-225deg);
 }
 .content .search .filter input {
-  color: var(--white);
+  -webkit-box-shadow: 0px 1px 2px -2px black;
+          box-shadow: 0px 1px 2px -2px black;
+  color: var(--text);
   position: absolute;
   top: 0;
   left: 0;
@@ -174,38 +196,42 @@ header div i {
   border: none;
   outline: none;
   padding: 7px 30px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 .content .search .filter input::-webkit-input-placeholder {
-  color: var(--white);
+  color: var(--text);
 }
 .content .search .filter input::-moz-placeholder {
-  color: var(--white);
+  color: var(--text);
 }
 .content .search .filter input:-ms-input-placeholder {
-  color: var(--white);
+  color: var(--text);
 }
 .content .search .filter input::-ms-input-placeholder {
-  color: var(--white);
+  color: var(--text);
 }
 .content .search .filter input::placeholder {
-  color: var(--white);
+  color: var(--text);
 }
 .content .search .filter .option {
   display: none;
   position: absolute;
   top: 60px;
   width: 100%;
-  background-color: var(--dark-blue);
+  background-color: var(--element);
   border-radius: 6px;
   overflow: hidden;
+  -webkit-box-shadow: 0px 0px 8px -3px black;
+          box-shadow: 0px 0px 8px -3px black;
 }
 .content .search .filter .option div {
   padding: 10px 30px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 .content .search .filter .option div:hover {
-  background-color: var(--very-dark-blue-bg);
+  background-color: var(--bg);
 }
 .content .search .filter.active .option {
   display: block;
@@ -227,17 +253,19 @@ header div i {
 }
 .content .countries .country {
   display: block;
-  background-color: var(--dark-blue);
+  background-color: var(--element);
   width: 280px;
   border-radius: 6px;
   overflow: hidden;
+  -webkit-box-shadow: 0px 0px 2px 0px #555;
+          box-shadow: 0px 0px 2px 0px #555;
 }
 .content .countries .country .flag {
   width: 100%;
   height: 175px;
 }
 .content .countries .country .info {
-  color: var(--white);
+  color: var(--text);
   padding: 20px;
 }
 .content .countries .country .info .title {

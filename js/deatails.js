@@ -38,10 +38,45 @@ function lang(){
     return cont;
 }
 function border(){
-    let cont = '';
-    for (let i = 0; i < country.borders.length; i++){
-        cont += `<li>${country.borders[i]}</li>`;
+    try {
+        let cont = '';
+        for (let i = 0; i < country.borders.length; i++) {
+            cont += `<li>${country.borders[i]}</li>`;
+        }
+        return cont;
+    } catch (Unknown) {
+        return Unknown = "unknown";
     }
-    return cont;
 }
 document.querySelector(".country").innerHTML = content;
+
+let colors = document.querySelector(':root');
+
+if (localStorage.mode == "light") {
+    colors.style.setProperty('--element', 'hsl(0, 0%, 100%)');
+    colors.style.setProperty('--bg', 'hsl(0, 0%, 94%)');
+    colors.style.setProperty('--text', 'hsl(200, 15%, 8%)');
+    document.querySelector('#mode span').innerHTML = "Light Mode";
+} else if (localStorage.mode == "dark") {
+    colors.style.setProperty('--element', 'hsl(209, 23%, 22%)');
+    colors.style.setProperty('--bg', 'hsl(207, 26%, 17%)');
+    colors.style.setProperty('--text', 'hsl(0, 0%, 100%)');
+    document.querySelector('#mode span').innerHTML = "Dark Mode";
+}
+
+let modeBtn = document.getElementById("mode");
+modeBtn.onclick = () => {
+    if (localStorage.mode == "dark") {
+        colors.style.setProperty('--element', 'hsl(0, 0%, 100%)');
+        colors.style.setProperty('--bg', 'hsl(0, 0%, 94%)');
+        colors.style.setProperty('--text', 'hsl(200, 15%, 8%)');
+        localStorage.mode = "light";
+        document.querySelector('#mode span').innerHTML = "Light Mode";
+    }else if(localStorage.mode == "light"){
+        colors.style.setProperty('--element', 'hsl(209, 23%, 22%)');
+        colors.style.setProperty('--bg', 'hsl(207, 26%, 17%)');
+        colors.style.setProperty('--text', 'hsl(0, 0%, 100%)');
+        localStorage.mode = "dark";
+        document.querySelector('#mode span').innerHTML = "Dark Mode";
+    }
+}
