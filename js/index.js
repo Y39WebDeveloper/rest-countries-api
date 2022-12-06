@@ -91,6 +91,7 @@ getData("https://restcountries.com/v3.1/all").then((countries) => {
     }
     /* MODE */
     let colors = document.querySelector(':root');
+    localStorage.mode = "dark";
 
     if (localStorage.mode == "light") {
         colors.style.setProperty('--element', 'hsl(0, 0%, 100%)');

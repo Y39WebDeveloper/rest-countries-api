@@ -51,6 +51,8 @@ function border(){
 document.querySelector(".country").innerHTML = content;
 
 let colors = document.querySelector(':root');
+localStorage.mode = "dark";
+
 
 if (localStorage.mode == "light") {
     colors.style.setProperty('--element', 'hsl(0, 0%, 100%)');
