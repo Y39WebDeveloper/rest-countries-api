@@ -89,36 +89,36 @@ getData("https://restcountries.com/v3.1/all").then((countries) => {
             }
         }
     }
-});
+    /* MODE */
+    let colors = document.querySelector(':root');
 
-
-let colors = document.querySelector(':root');
-
-if (localStorage.mode == "light") {
-    colors.style.setProperty('--element', 'hsl(0, 0%, 100%)');
-    colors.style.setProperty('--bg', 'hsl(0, 0%, 94%)');
-    colors.style.setProperty('--text', 'hsl(200, 15%, 8%)');
-    document.querySelector('#mode span').innerHTML = "Light Mode";
-} else if (localStorage.mode == "dark") {
-    colors.style.setProperty('--element', 'hsl(209, 23%, 22%)');
-    colors.style.setProperty('--bg', 'hsl(207, 26%, 17%)');
-    colors.style.setProperty('--text', 'hsl(0, 0%, 100%)');
-    document.querySelector('#mode span').innerHTML = "Dark Mode";
-}
-
-let modeBtn = document.getElementById("mode");
-modeBtn.onclick = () => {
-    if (localStorage.mode == "dark") {
+    if (localStorage.mode == "light") {
         colors.style.setProperty('--element', 'hsl(0, 0%, 100%)');
         colors.style.setProperty('--bg', 'hsl(0, 0%, 94%)');
         colors.style.setProperty('--text', 'hsl(200, 15%, 8%)');
-        localStorage.mode = "light";
         document.querySelector('#mode span').innerHTML = "Light Mode";
-    } else if (localStorage.mode == "light") {
+    } else if (localStorage.mode == "dark") {
         colors.style.setProperty('--element', 'hsl(209, 23%, 22%)');
         colors.style.setProperty('--bg', 'hsl(207, 26%, 17%)');
         colors.style.setProperty('--text', 'hsl(0, 0%, 100%)');
-        localStorage.mode = "dark";
         document.querySelector('#mode span').innerHTML = "Dark Mode";
     }
-}
+
+    let modeBtn = document.getElementById("mode");
+    modeBtn.onclick = () => {
+        if (localStorage.mode == "dark") {
+            colors.style.setProperty('--element', 'hsl(0, 0%, 100%)');
+            colors.style.setProperty('--bg', 'hsl(0, 0%, 94%)');
+            colors.style.setProperty('--text', 'hsl(200, 15%, 8%)');
+            localStorage.mode = "light";
+            document.querySelector('#mode span').innerHTML = "Light Mode";
+        } else if (localStorage.mode == "light") {
+            colors.style.setProperty('--element', 'hsl(209, 23%, 22%)');
+            colors.style.setProperty('--bg', 'hsl(207, 26%, 17%)');
+            colors.style.setProperty('--text', 'hsl(0, 0%, 100%)');
+            localStorage.mode = "dark";
+            document.querySelector('#mode span').innerHTML = "Dark Mode";
+        }
+    }
+    /* MODE */
+});
