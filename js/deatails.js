@@ -1,6 +1,14 @@
 let country = JSON.parse(localStorage.country);
-let currency = Object.values(country.currencies);
 let language = Object.values(country.languages);
+function currency(){
+    try {
+        let currencies = Object.values(country.currencies);
+        let currency = currencies[0].name;
+        return currency;
+    } catch (error) {
+        return error = "unknown";
+    };
+}
 
 let content = `<img class="flag" src="${country.flags.png}" alt="">
             <div class="description">
@@ -15,7 +23,7 @@ let content = `<img class="flag" src="${country.flags.png}" alt="">
                     </ul>
                     <ul>
                         <li><span>Top Level Domian: </span>${country.tld[0]}</li>
-                        <li><span>Currency: </span>${currency[0].name}</li>
+                        <li><span>Currency: </span>${currency()}</li>
                         <li><span>Language: </span>${lang()}</li>
                     </ul>
                 </div>

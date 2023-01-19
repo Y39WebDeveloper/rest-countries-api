@@ -14,7 +14,15 @@ let getData = function(apilink){
         myRequest.send();
     })
 }
-getData("https://restcountries.com/v3.1/all").then((countries) => {
+getData("https://restcountries.com/v3.1/all").then((countries0) => {
+    let countries = Array.from(countries0);
+    for(let i=0; i<countries0.length; i++){
+        if (countries0[i].name.common == 'Israel') {
+            countries.splice(i,1);
+        }
+    }
+    return countries;
+}).then((countries) => {
     document.getElementById("search").onkeyup = () => {
         let content = '';
         let pays = [];
